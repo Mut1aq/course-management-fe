@@ -1,0 +1,14 @@
+{
+  "header": {
+    "logo": {},
+    "nav": {
+      "portfolio": "نماذج الاعمال",
+      "courses": "الدورات",
+      "contactMe": "اتصل بي"
+    },
+    "authButtons": {
+      "login": "تسجيل الدخول",
+      "register": "انشاء حساب"
+    }
+  }
+}

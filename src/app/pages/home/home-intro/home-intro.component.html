@@ -1,0 +1,41 @@
+<div class="intro-container">
+  <section class="technologies">
+    @for (logo of logos; track $index) {
+    <div class="image-container">
+      <a href="">
+        <picture
+          ><img [src]="logo.src" [alt]="logo.alt" class="logo"
+        /></picture>
+      </a>
+    </div>
+
+    }
+  </section>
+  <section class="promo-text">
+    <h1 class="promo-text-heading">INVEST IN YOUR FUTURE</h1>
+    <p>
+      where career aspirations become reality. Elevate your skills in NestJS,
+      Angular, MongoDB, PostgreSQL, and Node.js. <br />
+      Unleash your coding potential and open doors to a world of opportunities.
+      <br /><br />
+      Ready to level up your coding journey?
+      <a
+        routerLink="/register"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="link"
+        >Join</a
+      >
+      one of the
+      <a
+        routerLink="/courses"
+        routerLinkActive="active"
+        ariaCurrentWhenActive="page"
+        class="link"
+        >courses</a
+      >
+      today and invest in a future of endless possibilities. <br />
+      Your success story starts here!
+    </p>
+  </section>
+</div>

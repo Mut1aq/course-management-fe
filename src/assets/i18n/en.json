@@ -1,0 +1,14 @@
+{
+  "header": {
+    "logo": {},
+    "nav": {
+      "portfolio": "Portfolio",
+      "courses": "Courses",
+      "contactMe": "Contact Me"
+    },
+    "authButtons": {
+      "login": "Login",
+      "register": "Register"
+    }
+  }
+}

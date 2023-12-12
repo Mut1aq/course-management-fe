@@ -1,0 +1,47 @@
+@if (controlToValidate?.errors?.['required']) {
+<div class="error-message example-full-width my-3">
+  {{
+    "validation.required" | translate : { value: (translationName | translate) }
+  }}
+</div>
+} @if (controlToValidate?.errors?.['minlength']) {
+<div class="error-message example-full-width my-3">
+  {{
+              "validation.minLength"
+                | translate
+                  : { value: (translationName | translate), length: controlToValidate?.errors?.['minlength'].requiredLength }
+  }}
+</div>
+} @if (controlToValidate?.errors?.['maxlength']) {
+<div class="error-message example-full-width my-3">
+  {{
+              "validation.maxlength"
+                | translate
+                  : { value: (translationName | translate), length: controlToValidate?.errors?.['maxlength'].requiredLength }
+  }}
+</div>
+} @if (controlToValidate?.hasError('requiresUppercaseLetter')) {
+<div class="error-message example-full-width my-3">
+  {{ "passwordContains.uppercase" | translate }}
+</div>
+} @if (controlToValidate?.hasError('requiresLowercaseLetter')) {
+<div class="error-message example-full-width my-3">
+  {{ "passwordContains.lowercase" | translate }}
+</div>
+} @if (controlToValidate?.hasError('requiresNumbers')) {
+<div class="error-message example-full-width my-3">
+  {{ "passwordContains.number" | translate }}
+</div>
+} @if (controlToValidate?.hasError('requiresSpecialCharacters')) {
+<div class="error-message example-full-width my-3">
+  {{ "passwordContains.specialCharacter" | translate }}
+</div>
+} @if (controlToValidate?.hasError('mismatch')) {
+<div class="error-message example-full-width my-3">
+  {{ "login.form.match" | translate }}
+</div>
+} @if (controlToValidate?.hasError('email')) {
+<div class="error-message example-full-width my-3">
+  {{ "validation.email" | translate }}
+</div>
+}

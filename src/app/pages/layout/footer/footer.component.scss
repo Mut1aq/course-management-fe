@@ -1,0 +1,21 @@
+footer {
+  margin-top: auto;
+  background-color: black;
+  color: white;
+  padding-bottom: 2em;
+  --mask: radial-gradient(6.25px at 8.75px 50%, #000 99%, #0000 101%) 0
+      calc(50% - 10px) / 51% 20px repeat-y,
+    radial-gradient(6.25px at -3.75px 50%, #0000 99%, #000 101%) 5px 50% /
+      calc(51% - 5px) 20px repeat-y,
+    radial-gradient(6.25px at calc(100% - 8.75px) 50%, #000 99%, #0000 101%)
+      100% calc(50% - 10px) / 51% 20px repeat-y,
+    radial-gradient(6.25px at calc(100% + 3.75px) 50%, #0000 99%, #000 101%)
+      calc(100% - 5px) 50% / calc(51% - 5px) 20px repeat-y;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+
+  p {
+    text-align: center;
+    margin: 0 auto;
+  }
+}

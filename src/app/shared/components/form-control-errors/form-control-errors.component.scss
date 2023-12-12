@@ -1,0 +1,10 @@
+@use "../../../../assets/styles/_colors" as colors;
+
+.error-message {
+  background-color: colors.$error-color;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  border-radius: 9999px;
+}

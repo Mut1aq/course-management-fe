@@ -1,0 +1,28 @@
+@use "../../../../assets/styles/_colors" as colors;
+
+section.why-choose-me-container {
+  margin-top: 10%;
+  background-color: colors.$grey;
+  display: flex;
+
+  div.glass-image-container {
+    padding-right: 1em;
+
+    width: 50%;
+  }
+
+  div.why-choose-me-text-container {
+    padding-left: 1em;
+
+    width: 50%;
+
+    .why-choose-me-text-heading {
+      font-size: x-large;
+      color: colors.$primary;
+    }
+  }
+
+  div.glass-image-container > picture > img {
+    object-fit: contain;
+  }
+}

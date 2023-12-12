@@ -1,0 +1,38 @@
+@use "./_colors" as colors;
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: 3px solid colors.$white;
+  color: colors.$black;
+  padding: 0.2em 0.75em;
+  border-radius: 0.25em;
+  background-color: colors.$white;
+
+  position: relative;
+  isolation: isolate;
+}
+
+.button:hover {
+  color: colors.$white;
+  border: 3px solid colors.$primary;
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background-color: colors.$primary;
+  inset: 0;
+
+  scale: 0 1;
+  transform-origin: right;
+  transition: scale 450ms;
+}
+
+.button:hover::after,
+.button:focus-visible::after {
+  scale: 1 1;
+  transform-origin: left;
+}
