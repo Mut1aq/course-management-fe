@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private readonly platformID: Object // TODO: private readonly renderer2: Renderer2
   ) {}
-  isRegisterButtonHidden = false;
+  isAuthButtonsHidden = false;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformID)) {
@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit {
   onResize(event: Event & { target: { innerWidth: number } }) {
     const width = event.target?.innerWidth;
 
-    if (width < 800) this.isRegisterButtonHidden = true;
-    else this.isRegisterButtonHidden = false;
+    if (width < 800) this.isAuthButtonsHidden = true;
+    else this.isAuthButtonsHidden = false;
   }
 }
