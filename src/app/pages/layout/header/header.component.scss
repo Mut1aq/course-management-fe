@@ -1,6 +1,5 @@
 @use "../../../../assets/styles/_colors" as colors;
 @use "../../../../assets/styles/_buttons" as buttons;
-@use "../../../../assets/styles/_sizes" as sizes;
 @use "../../../../assets/styles/_links" as links;
 @use "../../../../assets/styles/_helpers" as helpers;
 
@@ -10,13 +9,10 @@ header {
   justify-content: space-evenly;
   align-items: center;
 
-  section.logo-container {
-  }
-
-  section.navigation-container {
+  .navigation-container {
     flex-grow: 0.5;
     nav {
-      ul.nav-list {
+      .nav-list {
         display: flex;
 
         li {
@@ -24,8 +20,5 @@ header {
         }
       }
     }
-  }
-
-  section.auth-buttons-container {
   }
 }

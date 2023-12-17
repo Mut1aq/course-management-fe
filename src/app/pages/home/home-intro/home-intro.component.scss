@@ -1,16 +1,17 @@
 @use "../../../../assets/styles/_headers" as headers;
 
-div.home-intro-container {
+.home-intro-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
-  section.home-intro-svg-container {
-    width: 40%;
+  .home-intro-svg-container {
+    width: 50%;
     margin-left: 1em;
   }
 
-  section.promo-text-container {
-    width: 60%;
+  .promo-text-container {
+    width: 50%;
     padding-left: 3em;
     margin-right: 1em;
 

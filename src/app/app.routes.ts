@@ -26,13 +26,6 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'portfolio',
-    loadComponent: () =>
-      import('./pages/portfolio/portfolio.component').then(
-        (m) => m.PortfolioComponent
-      ),
-  },
-  {
     path: 'courses',
     loadComponent: () =>
       import('./pages/courses/courses.component').then(

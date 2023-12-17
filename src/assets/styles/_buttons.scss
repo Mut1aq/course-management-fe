@@ -1,4 +1,5 @@
 @use "./_colors" as colors;
+@use "./_sizes" as sizes;
 
 .button {
   display: inline-block;
@@ -7,7 +8,7 @@
   border: 2px solid colors.$black;
   color: colors.$black;
   padding: 0.2em 0.75em;
-  border-radius: 0.25em;
+  border-radius: sizes.$primary-button-border-radius;
   background-color: colors.$white;
 
   position: relative;

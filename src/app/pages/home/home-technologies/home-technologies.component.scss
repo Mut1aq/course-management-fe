@@ -1,10 +1,11 @@
 @use "../../../../assets/styles/_colors" as colors;
 @use "../../../../assets/styles/_headers" as headers;
+@use "../../../../assets/styles/_sizes" as sizes;
 
-div.technologies-container {
+.technologies-container {
   background-color: colors.$grey;
   padding-top: 1.5em;
-  section.technologies {
+  .technologies {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -72,7 +73,7 @@ div.technologies-container {
       background-color: colors.$primary;
       color: #fff;
       padding: 5px 10px;
-      border-radius: 5px;
+      border-radius: sizes.$primary-button-border-radius;
       transition: 0.5s;
     }
 
@@ -93,7 +94,7 @@ div.technologies-container {
     }
   }
 
-  section.text-container {
+  .text-container {
     text-align: center;
   }
 }

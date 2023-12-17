@@ -1,7 +1,6 @@
 @use "./assets/styles/_font-size" as font-size;
 @use "./assets/styles/_font-weight.scss" as font-weight;
 @use "./assets/styles/_font-family.scss" as font-family;
-@use "./assets/styles/_sizes.scss" as sizes;
 @use "./assets/styles/_colors.scss" as colors;
 
 //* Custom */
@@ -26,6 +25,8 @@ video {
 * {
   margin: 0;
   padding: 0;
+  font-size: calc(15px + 0.390625vw);
+
   font: inherit;
 }
 
@@ -37,7 +38,6 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: font-family.$ff-body;
-  font-size: calc(15px + 0.390625vw);
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -83,27 +83,6 @@ p[data-width="wide"] {
 
 :where(.flow :not(:first-child)) {
   margin-top: var(--flow-spacer, 3em);
-}
-
-hr {
-  overflow: visible; /* For IE */
-  height: 30px;
-  border-style: solid;
-  border-color: colors.$dark-grey;
-  border-width: 1px 0 0 0;
-  border-radius: 20px;
-  margin: 1em 0 1em 0;
-}
-hr:before {
-  /* Not really supposed to work, but does */
-  display: block;
-  content: "";
-  height: 30px;
-  margin-top: -31px;
-  border-style: solid;
-  border-color: colors.$dark-grey;
-  border-width: 0 0 1px 0;
-  border-radius: 20px;
 }
 
 //* Custom */
