@@ -1,95 +1,81 @@
 <header>
-  <div class="container">
-    <div class="nav-wrapper">
-      <a class="link" routerLink="/">
-        <picture
-          ><img
-            class="logo"
-            src="assets/images/logo-no-background.png"
-            alt="Mut1aq"
-        /></picture>
-      </a>
-      <button
-        class="mobile-nav-toggle"
-        aria-controls="primary-navigation"
-        aria-expanded="false"
-      >
-        <picture>
-          <img
-            class="icon-hamburger"
-            src="assets/icons/icon-hamburger.svg"
-            alt=""
-            aria-hidden="true"
-        /></picture>
-        <picture>
-          <img
-            class="icon-close"
-            src="assets/icons/icon-close.svg"
-            alt=""
-            aria-hidden="true"
-        /></picture>
-
-        <span class="visually-hidden">Menu</span>
-      </button>
-      <nav class="primary-navigation" id="primary-navigation">
-        <ul aria-label="Primary" role="list" class="nav-list">
-          <li>
-            <a
-              class="link"
-              routerLink="/portfolio"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >{{ "header.nav.portfolio" | translate }}</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              routerLink="/courses"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >{{ "header.nav.courses" | translate }}</a
-            >
-          </li>
-          <li>
-            <a
-              class="link"
-              routerLink="/contact-me"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >{{ "header.nav.contactMe" | translate }}
-            </a>
-          </li>
-
-          <li>
-            <a
-              class="link"
-              routerLink="/login"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >{{ "header.authButtons.login" | translate }}
-            </a>
-          </li>
-
-          <li [hidden]="!this.isRegisterButtonHidden">
-            <a
-              class="link"
-              routerLink="/register"
-              routerLinkActive="active"
-              ariaCurrentWhenActive="page"
-              >{{ "header.authButtons.register" | translate }}
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <button
-        routerLink="/register"
-        routerLinkActive="active"
-        ariaCurrentWhenActive="page"
-        class="button | display-sm-none display-md-inline-flex"
-      >
-        {{ "header.authButtons.register" | translate }}
-      </button>
-    </div>
-  </div>
+  <section class="logo-container">
+    <a class="link" routerLink="/">
+      <picture
+        ><img src="assets/images/logo-no-background.png" alt="Mut1aq"
+      /></picture>
+    </a>
+  </section>
+  <section class="navigation-container">
+    <nav>
+      <ul aria-label="Primary" role="list" class="nav-list">
+        <li>
+          <a
+            class="link"
+            routerLink="/portfolio"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ "header.nav.portfolio" | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            routerLink="/courses"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ "header.nav.courses" | translate }}</a
+          >
+        </li>
+        <li>
+          <a
+            class="link"
+            routerLink="/contact-me"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ "header.nav.contactMe" | translate }}
+          </a>
+        </li>
+        @if (this.isAuthButtonsHidden) {
+        <li>
+          <a
+            class="link"
+            routerLink="/login"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ "header.authButtons.login" | translate }}
+          </a>
+        </li>
+        <li>
+          <a
+            class="link"
+            routerLink="/register"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page"
+            >{{ "header.authButtons.register" | translate }}
+          </a>
+        </li>
+        }
+      </ul>
+    </nav>
+  </section>
+  <section class="auth-buttons-container">
+    <a
+      class="link | display-sm-none display-md-inline-flex"
+      routerLink="/login"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+    >
+      {{ "header.authButtons.login" | translate }}</a
+    >
+    <span class="vertical-line"></span>
+    <button
+      routerLink="/register"
+      routerLinkActive="active"
+      ariaCurrentWhenActive="page"
+      class="button | display-sm-none display-md-inline-flex"
+    >
+      {{ "header.authButtons.register" | translate }}
+    </button>
+  </section>
 </header>

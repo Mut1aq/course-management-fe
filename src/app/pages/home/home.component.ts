@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HeaderWhyChooseMeComponent } from './header-why-choose-me/header-why-choose-me.component';
 import { HomeCoursesComponent } from './home-courses/home-courses.component';
 import { HomeIntroComponent } from './home-intro/home-intro.component';
+import { HomeTechnologiesComponent } from './home-technologies/home-technologies.component';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +9,7 @@ import { HomeIntroComponent } from './home-intro/home-intro.component';
   imports: [
     HomeIntroComponent,
     HomeCoursesComponent,
-    HeaderWhyChooseMeComponent,
+    HomeTechnologiesComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',

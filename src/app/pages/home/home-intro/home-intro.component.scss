@@ -1,58 +1,20 @@
-@use "../../../../assets/styles/_colors" as colors;
-@use "../../../../assets/styles/_links" as links;
+@use "../../../../assets/styles/_headers" as headers;
 
-div.intro-container {
+.home-intro-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 0 1em 0 1em;
+  justify-content: center;
+  align-items: center;
 
-  section.technologies {
+  .home-intro-svg-container {
     width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-
-    padding-right: 1em;
-
-    div.image-container {
-      width: 180px;
-      flex-shrink: 1;
-    }
-
-    @media (width < 735px) {
-      div.image-container {
-        width: 70px;
-        flex-shrink: 1;
-      }
-    }
-
-    img.logo {
-      object-fit: contain;
-      transition: filter 0.3s ease-in-out;
-    }
-
-    .logo:hover {
-      filter: brightness(1.5);
-    }
+    margin-left: 1em;
   }
 
-  section.promo-text {
-    padding-left: 1em;
+  .promo-text-container {
     width: 50%;
+    padding-left: 3em;
+    margin-right: 1em;
 
-    .promo-text-heading {
-      font-size: xx-large;
-      color: colors.$primary;
-    }
-
-    p > a.link {
-      color: colors.$primary;
-    }
-
-    p {
-      color: colors.$dark-grey;
-    }
+    margin: 0 auto;
   }
 }

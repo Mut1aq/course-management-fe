@@ -1,0 +1,41 @@
+<article class="technologies-container">
+  <section class="text-container">
+    <h2>Technologies used in the courses</h2>
+  </section>
+  <section class="technologies">
+    <div class="scroll" style="--time: 20s">
+      <div>
+        @for (logo of logos; track $index) {
+        <span>
+          <a target="_blank" [href]="logo.websiteLink">{{
+            logo.name
+          }}</a> </span
+        >}
+      </div>
+    </div>
+    <div class="scroll" style="--time: 15s">
+      <div>
+        @for (logo of logos; track $index) {
+        <span>
+          <a target="_blank" [href]="logo.websiteLink">{{
+            logo.name
+          }}</a> </span
+        >}
+      </div>
+    </div>
+
+    <div class="scroll image-container" style="--time: 25s">
+      @for (logo of logos; track $index) {
+      <div>
+        <img [src]="logo.src" [alt]="logo.alt" />
+      </div>
+
+      } @for (logo of logos; track $index) {
+      <div>
+        <img [src]="logo.src" [alt]="logo.alt" />
+      </div>
+
+      }
+    </div>
+  </section>
+</article>
