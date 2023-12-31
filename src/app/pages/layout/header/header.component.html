@@ -18,15 +18,7 @@
             >{{ "header.nav.portfolio" | translate }}</a
           >
         </li>
-        <li>
-          <a
-            class="link"
-            routerLink="/courses"
-            routerLinkActive="active"
-            ariaCurrentWhenActive="page"
-            >{{ "header.nav.courses" | translate }}</a
-          >
-        </li>
+
         <li>
           <a
             class="link"
@@ -40,7 +32,7 @@
         <li>
           <a
             class="link"
-            routerLink="/login"
+            routerLink="/auth/login"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >{{ "header.authButtons.login" | translate }}
@@ -49,7 +41,7 @@
         <li>
           <a
             class="link"
-            routerLink="/register"
+            routerLink="/auth/register"
             routerLinkActive="active"
             ariaCurrentWhenActive="page"
             >{{ "header.authButtons.register" | translate }}
@@ -62,7 +54,7 @@
   <section class="auth-buttons-container">
     <a
       class="link | display-sm-none display-md-inline-flex"
-      routerLink="/login"
+      routerLink="/auth/login"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
     >
@@ -70,7 +62,7 @@
     >
     <span class="vertical-line"></span>
     <button
-      routerLink="/register"
+      routerLink="/auth/register"
       routerLinkActive="active"
       ariaCurrentWhenActive="page"
       class="button | display-sm-none display-md-inline-flex"

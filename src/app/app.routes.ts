@@ -7,16 +7,23 @@ export const routes: Routes = [
       import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
-    path: 'login',
-    loadComponent: () =>
-      import('./pages/login/login.component').then((m) => m.LoginComponent),
-  },
-  {
-    path: 'register',
-    loadComponent: () =>
-      import('./pages/register/register.component').then(
-        (m) => m.RegisterComponent
-      ),
+    path: 'auth',
+    children: [
+      {
+        path: 'login',
+        loadComponent: () =>
+          import('./pages/auth/login/login.component').then(
+            (m) => m.LoginComponent
+          ),
+      },
+      {
+        path: 'register',
+        loadComponent: () =>
+          import('./pages/auth/register/register.component').then(
+            (m) => m.RegisterComponent
+          ),
+      },
+    ],
   },
   {
     path: 'contact-me',
@@ -26,10 +33,17 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'courses',
+    path: 'portfolio',
     loadComponent: () =>
-      import('./pages/courses/courses.component').then(
-        (m) => m.CoursesComponent
+      import('./pages/portfolio/portfolio.component').then(
+        (m) => m.PortfolioComponent
+      ),
+  },
+  {
+    path: 'course/:id',
+    loadComponent: () =>
+      import('./pages/course-detail/course-detail.component').then(
+        (m) => m.CourseDetailComponent
       ),
   },
 

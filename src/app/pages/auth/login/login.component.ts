@@ -7,7 +7,7 @@ import {
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { FormControlErrorsComponent } from '../../shared/components/form-control-errors/form-control-errors.component';
+import { FormControlErrorsComponent } from '../../../shared/components/form-control-errors/form-control-errors.component';
 
 @Component({
   selector: 'app-login',

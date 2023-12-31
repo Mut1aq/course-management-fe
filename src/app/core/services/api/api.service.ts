@@ -1,14 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-  loading$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-
   constructor(private readonly http: HttpClient) {}
 
   get = <T>(url: string, params?: any): Observable<T> => {
