@@ -1,0 +1,48 @@
+@use "../../../../../assets/styles/_colors" as colors;
+@use "../../../../../assets/styles/_buttons" as buttons;
+@use "../../../../../assets/styles/_links" as links;
+@use "../../../../../assets/styles/_helpers" as helpers;
+
+.mobile-menu-container {
+  display: none;
+}
+
+@media (max-width: 585px) {
+  .mobile-menu-container {
+    display: block;
+
+    .mobile-menu-toggle {
+      margin-right: 1.5em;
+      transform: scale(2.5);
+      cursor: pointer;
+    }
+
+    .mobile-menu-toggle:hover {
+      transform: scale(3);
+      filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    }
+
+    .mobile-navigation {
+      backdrop-filter: blur(10px) saturate(70%);
+      position: absolute;
+      right: 0em;
+      width: 100%;
+      top: 5em;
+      height: 61%;
+      z-index: 1;
+      transition: all 0.5s;
+
+      ul.list-items {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        li {
+          align-self: center;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

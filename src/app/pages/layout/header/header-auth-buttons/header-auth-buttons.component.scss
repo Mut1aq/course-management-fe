@@ -1,0 +1,9 @@
+@use "../../../../../assets/styles/_buttons" as buttons;
+@use "../../../../../assets/styles/_links" as links;
+@use "../../../../../assets/styles/_helpers" as helpers;
+
+@media (max-width: 585px) {
+  .auth-buttons-container {
+    display: none;
+  }
+}

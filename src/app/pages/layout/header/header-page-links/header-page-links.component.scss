@@ -1,0 +1,21 @@
+@use "../../../../../assets/styles/_colors" as colors;
+@use "../../../../../assets/styles/_buttons" as buttons;
+@use "../../../../../assets/styles/_links" as links;
+@use "../../../../../assets/styles/_helpers" as helpers;
+
+.navigation-container {
+  nav {
+    .nav-list {
+      display: flex;
+
+      li {
+        margin-right: 1em;
+      }
+    }
+  }
+}
+@media (max-width: 585px) {
+  .navigation-container {
+    display: none;
+  }
+}

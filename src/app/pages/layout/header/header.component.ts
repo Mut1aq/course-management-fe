@@ -1,49 +1,47 @@
-import { isPlatformBrowser } from '@angular/common';
+import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   HostListener,
   Inject,
   OnInit,
   PLATFORM_ID,
-  // Renderer2,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { HeaderAuthButtonsComponent } from './header-auth-buttons/header-auth-buttons.component';
+import { HeaderLogoComponent } from './header-logo/header-logo.component';
+import { HeaderMobileMenuComponent } from './header-mobile-menu/header-mobile-menu.component';
+import { HeaderPageLinksComponent } from './header-page-links/header-page-links.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [TranslateModule, RouterModule],
+  imports: [
+    RouterModule,
+    HeaderMobileMenuComponent,
+    HeaderLogoComponent,
+    HeaderAuthButtonsComponent,
+    HeaderPageLinksComponent,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
   constructor(
-    @Inject(PLATFORM_ID) private readonly platformID: Object // TODO: private readonly renderer2: Renderer2
+    @Inject(DOCUMENT) private document: Document,
+    @Inject(PLATFORM_ID) private readonly platformID: Object
   ) {}
-  isAuthButtonsHidden = false;
-
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformID)) {
-      const primaryHeader = document.querySelector('.primary-header');
-      const navToggle = document.querySelector('.mobile-nav-toggle');
-      const primaryNav = document.querySelector('.primary-navigation');
-
-      navToggle?.addEventListener('click', () => {
-        primaryNav?.hasAttribute('data-visible')
-          ? navToggle?.setAttribute('aria-expanded', 'false')
-          : navToggle?.setAttribute('aria-expanded', 'true');
-        primaryNav?.toggleAttribute('data-visible');
-        primaryHeader?.toggleAttribute('data-overlay');
-      });
-    }
+    if (isPlatformBrowser(this.platformID))
+      this.isMobileScreen = this.document.defaultView!.innerWidth < 585;
   }
+
+  isMobileScreen = false;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event & { target: { innerWidth: number } }) {
     const width = event.target?.innerWidth;
 
-    if (width < 800) this.isAuthButtonsHidden = true;
-    else this.isAuthButtonsHidden = false;
+    if (width < 585) this.isMobileScreen = true;
+    else this.isMobileScreen = false;
   }
 }
