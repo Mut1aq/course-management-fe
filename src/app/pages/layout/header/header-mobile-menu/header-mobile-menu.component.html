@@ -1,0 +1,60 @@
+<section class="mobile-menu-container">
+  <div class="mobile-menu-toggle">
+    <figure>
+      <img
+        src="assets/svgs/menu.svg"
+        alt="mobile menu toggle"
+        (click)="openMobileMenu()"
+      />
+    </figure>
+  </div>
+  <nav
+    [style.opacity]="!isMenuOpen ? '0' : '1'"
+    [style.visibility]="!isMenuOpen ? 'hidden' : 'visible'"
+    role="list"
+    aria-label="Secondary"
+    class="mobile-navigation"
+  >
+    <ul class="list-items">
+      <li>
+        <a
+          class="link"
+          routerLink="/portfolio"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >{{ "header.nav.portfolio" | translate }}</a
+        >
+      </li>
+
+      <li>
+        <a
+          class="link"
+          routerLink="/contact-me"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >{{ "header.nav.contactMe" | translate }}
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="link"
+          routerLink="/auth/login"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >{{ "header.authButtons.login" | translate }}
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="link"
+          routerLink="/auth/register"
+          routerLinkActive="active"
+          ariaCurrentWhenActive="page"
+          >{{ "header.authButtons.register" | translate }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</section>

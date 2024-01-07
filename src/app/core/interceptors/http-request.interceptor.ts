@@ -12,7 +12,7 @@ import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, finalize, retry } from 'rxjs/operators';
-import { ApiService } from '../services/api.service';
+import { ApiService } from '../services/api/api.service';
 
 @Injectable({
   providedIn: 'root',

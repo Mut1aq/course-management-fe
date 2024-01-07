@@ -1,0 +1,47 @@
+<article class="login-page-container">
+  <section class="login-page-svg-container">
+    <figure>
+      <img src="assets/svgs/login.svg" alt="" />
+    </figure>
+  </section>
+  <section class="login-form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <h1>Welcome Back!</h1>
+      <h6>Please Enter your credentials</h6>
+      <div class="form-control">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          [placeholder]="'login.form.email' | translate"
+          id="email"
+          formControlName="email"
+        />
+        @if (email?.invalid && (email?.dirty || email?.touched))
+        {<app-form-control-errors
+          [controlToValidate]="email"
+          translationName="login.form.email"
+        ></app-form-control-errors
+        >}
+      </div>
+      <div class="form-control">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          placeholder="Password"
+          id="password"
+          formControlName="password"
+        />
+        @if (password?.invalid && (password?.dirty || password?.touched))
+        {<app-form-control-errors
+          [controlToValidate]="password"
+          translationName="login.form.password"
+        ></app-form-control-errors
+        >}
+      </div>
+
+      <div class="form-control">
+        <button type="submit" id="login-button">Login</button>
+      </div>
+    </form>
+  </section>
+</article>

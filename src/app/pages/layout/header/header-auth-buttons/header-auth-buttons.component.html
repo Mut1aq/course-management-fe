@@ -1,0 +1,19 @@
+<section class="auth-buttons-container">
+  <a
+    class="link"
+    routerLink="/auth/login"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+  >
+    {{ "header.authButtons.login" | translate }}</a
+  >
+  <span class="vertical-line"></span>
+  <button
+    routerLink="/auth/register"
+    routerLinkActive="active"
+    ariaCurrentWhenActive="page"
+    class="button"
+  >
+    {{ "header.authButtons.register" | translate }}
+  </button>
+</section>
