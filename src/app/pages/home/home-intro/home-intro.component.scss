@@ -1,8 +1,9 @@
 @use "../../../../assets/styles/_headers" as headers;
+@use "../../../../assets/styles/_break-points" as break-points;
 
 .home-intro-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   .home-intro-svg-container {
@@ -10,10 +11,15 @@
     margin-left: 1em;
   }
 
+  @media (max-width: break-points.$mobile) {
+    .home-intro-svg-container {
+      display: none;
+    }
+  }
+
   .promo-text-container {
-    width: 50%;
+    width: 100%;
     padding-left: 3em;
-    margin-right: 1em;
 
     margin: 0 auto;
   }

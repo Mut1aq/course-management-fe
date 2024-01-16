@@ -5,6 +5,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { PreventSpaceDirective } from 'src/app/shared/directives/prevent-space/prevent-space.directive';
@@ -19,6 +20,7 @@ import { FormControlErrorsComponent } from '../../../shared/components/form-cont
     TranslateModule,
     NgClass,
     PreventSpaceDirective,
+    RouterModule,
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',

@@ -88,9 +88,23 @@
       justify-content: center;
     }
 
-    .image-container img {
-      max-width: 100px;
-      scale: 0.8;
+    .image-container {
+      div {
+        a {
+          img {
+            max-width: 120px;
+            aspect-ratio: 3/2;
+            object-fit: contain;
+            mix-blend-mode: color-burn;
+            cursor: pointer;
+            filter: grayscale(1);
+            transition: 0.5s;
+          }
+          img:hover {
+            filter: grayscale(0);
+          }
+        }
+      }
     }
   }
 

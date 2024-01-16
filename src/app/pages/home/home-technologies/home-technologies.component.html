@@ -13,26 +13,20 @@
         >}
       </div>
     </div>
-    <div class="scroll" style="--time: 15s">
-      <div>
-        @for (logo of logos; track $index) {
-        <span>
-          <a target="_blank" [href]="logo.websiteLink">{{
-            logo.name
-          }}</a> </span
-        >}
-      </div>
-    </div>
 
     <div class="scroll image-container" style="--time: 25s">
       @for (logo of logos; track $index) {
       <div>
-        <img [src]="logo.src" [alt]="logo.alt" />
+        <a [href]="logo.websiteLink" target="_blank"
+          ><img [src]="logo.src" [alt]="logo.alt"
+        /></a>
       </div>
 
       } @for (logo of logos; track $index) {
       <div>
-        <img [src]="logo.src" [alt]="logo.alt" />
+        <a [href]="logo.websiteLink" target="_blank">
+          <img [src]="logo.src" [alt]="logo.alt" />
+        </a>
       </div>
 
       }

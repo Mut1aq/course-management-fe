@@ -1,6 +1,7 @@
 @use "../../../../assets/styles/_colors" as colors;
 @use "../../../../assets/styles/_sizes" as sizes;
 @use "../../../../assets/styles/_links" as links;
+@use "../../../../assets/styles/_buttons" as buttons;
 @use "../../../../assets/styles/_helpers" as helpers;
 @use "../../../../assets/styles/_form-controls" as form-controls;
 @use "../../../../assets/styles/_break-points" as break-points;
@@ -13,13 +14,15 @@
   background-color: colors.$grey;
   padding: 0.5em;
   border-radius: calc(1em - 10px);
-  width: 90%;
+  width: 98%;
+  margin: 0 auto;
+  height: 72vh;
 
   .login-page-svg-container {
     margin-left: 1em;
     figure {
       img {
-        width: 60%;
+        width: 100%;
       }
     }
   }
@@ -52,6 +55,23 @@
           }
         }
       }
+
+      .login-button {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2em;
+
+        button {
+          background-color: colors;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 325px) {
+    .login-form-container {
+      padding: 0;
+      margin-right: 0;
     }
   }
 }

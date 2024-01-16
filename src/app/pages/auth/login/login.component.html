@@ -82,14 +82,20 @@
         ></app-form-control-errors
         >} -->
       </div>
-
-      <div class="check-box-form-control">
-        <input type="checkbox" name="" id="rememberMe" />
-        <label for="rememberMe">Remember Me for 30 days</label>
+      <div class="remember-forget">
+        <div class="check-box-form-control">
+          <input type="checkbox" name="" id="rememberMe" />
+          <label for="rememberMe">Remember Me for 30 days</label>
+        </div>
+        <div class="forget">
+          <a routerLink="/auth/forget-password" ariaCurrentWhenActive="page"
+            >Forget Password?</a
+          >
+        </div>
       </div>
 
-      <div class="text-form-control">
-        <button type="submit" id="login-button">Login</button>
+      <div class="login-button">
+        <button type="submit" class="button">Login</button>
       </div>
     </form>
   </section>

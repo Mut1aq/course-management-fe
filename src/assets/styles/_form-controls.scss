@@ -20,7 +20,7 @@
   }
 
   label {
-    color: #9e9a9a;
+    color: colors.$darker-grey;
     font-size: 0.7rem !important;
     position: relative;
     transition: top 1s ease 0s;
@@ -72,20 +72,41 @@
 .text-form-control > label {
   cursor: text;
 }
-
-.check-box-form-control {
+.remember-forget {
   display: flex;
-  margin-bottom: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 
-  input[type="checkbox"] {
-    accent-color: colors.$primary;
+  .check-box-form-control {
+    display: flex;
+    align-items: center;
+
+    input[type="checkbox"] {
+      accent-color: colors.$primary;
+    }
+
+    label {
+      color: colors.$darker-grey;
+      font-size: 0.59rem !important;
+      position: relative;
+      transition: top 1s ease 0s;
+      margin-left: 0.5em;
+    }
+    label:hover {
+      color: colors.$black;
+    }
   }
 
-  label {
-    color: #9e9a9a;
-    font-size: 0.7rem !important;
-    position: relative;
-    transition: top 1s ease 0s;
-    margin-left: 0.5em;
+  .forget {
+    a {
+      font-size: 0.59rem !important;
+      text-decoration: none;
+      color: colors.$darker-grey;
+      margin-top: 1em;
+    }
+    a:hover {
+      color: colors.$black;
+    }
   }
 }
