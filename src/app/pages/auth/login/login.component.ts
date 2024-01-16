@@ -1,5 +1,5 @@
-import { DOCUMENT } from '@angular/common';
-import { Component, Inject, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { NgClass } from '@angular/common';
+import { Component, OnDestroy } from '@angular/core';
 import {
   NonNullableFormBuilder,
   ReactiveFormsModule,
@@ -7,23 +7,27 @@ import {
 } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
+import { PreventSpaceDirective } from 'src/app/shared/directives/prevent-space/prevent-space.directive';
 import { FormControlErrorsComponent } from '../../../shared/components/form-control-errors/form-control-errors.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, FormControlErrorsComponent, TranslateModule],
+  imports: [
+    ReactiveFormsModule,
+    FormControlErrorsComponent,
+    TranslateModule,
+    NgClass,
+    PreventSpaceDirective,
+  ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnDestroy {
+  constructor(private readonly fb: NonNullableFormBuilder) {}
   subscriptions: Subscription[] = [];
+  isPasswordHidden = true;
 
-  constructor(
-    private readonly fb: NonNullableFormBuilder,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
   loginForm = this.fb.group({
     email: [
       '',
@@ -40,8 +44,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     ],
   });
 
-  ngOnInit(): void {
-    this.renderer.addClass(this.document.body, 'body-background');
+  showHidePassword() {
+    this.isPasswordHidden = !this.isPasswordHidden;
   }
 
   onSubmit(): void {
@@ -52,7 +56,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.renderer.removeClass(this.document.body, 'body-background');
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
     this.subscriptions.splice(0);
   }

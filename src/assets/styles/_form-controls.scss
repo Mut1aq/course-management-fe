@@ -1,0 +1,91 @@
+@use "_colors" as colors;
+
+.text-form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5em;
+
+  .show-hide-password {
+    transform: scale(0.7);
+    position: relative;
+    bottom: 2.5em;
+    left: 13em;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+  }
+
+  .stay-on-top {
+    top: 1.5em;
+  }
+
+  label {
+    color: #9e9a9a;
+    font-size: 0.7rem !important;
+    position: relative;
+    transition: top 1s ease 0s;
+  }
+
+  label:has(+ input:focus) {
+    color: colors.$primary;
+    transition: top 1s ease 0s;
+    top: 0;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    outline: none;
+    border: none;
+    background: none;
+  }
+  .bar {
+    position: relative;
+    display: block;
+    width: 300px;
+  }
+  .bar:before,
+  .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: colors.$primary;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  .bar:before {
+    left: 50%;
+  }
+  .bar:after {
+    right: 50%;
+  }
+
+  input:focus ~ .bar:before,
+  input:focus ~ .bar:after {
+    width: 50%;
+  }
+}
+
+.text-form-control > input,
+.text-form-control > label {
+  cursor: text;
+}
+
+.check-box-form-control {
+  display: flex;
+  margin-bottom: 0.5em;
+
+  input[type="checkbox"] {
+    accent-color: colors.$primary;
+  }
+
+  label {
+    color: #9e9a9a;
+    font-size: 0.7rem !important;
+    position: relative;
+    transition: top 1s ease 0s;
+    margin-left: 0.5em;
+  }
+}

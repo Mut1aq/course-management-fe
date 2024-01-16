@@ -7,12 +7,12 @@ import { Directive, HostListener, Input } from '@angular/core';
 export class OnlyNumbersDirective {
   @Input() numbersOnly!: string;
 
-  navigationKeys: Array<string> = ['Backspace']; //Add keys as per requirement
+  navigationKeys: string[] = ['Backspace']; //Add keys as per requirement
 
   constructor() {}
 
-  @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
-    const { key, ctrlKey, metaKey, preventDefault } = event;
+  @HostListener('keydown', ['$event']) onKeyDown($event: KeyboardEvent) {
+    const { key, ctrlKey, metaKey, preventDefault } = $event;
     if (
       // Allow: Delete, Backspace, Tab, Escape, Enter, etc
       this.navigationKeys.indexOf(key) > -1 ||

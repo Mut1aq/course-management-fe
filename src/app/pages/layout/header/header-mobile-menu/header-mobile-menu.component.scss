@@ -2,12 +2,13 @@
 @use "../../../../../assets/styles/_buttons" as buttons;
 @use "../../../../../assets/styles/_links" as links;
 @use "../../../../../assets/styles/_helpers" as helpers;
+@use "../../../../../assets/styles/_break-points" as break-points;
 
 .mobile-menu-container {
   display: none;
 }
 
-@media (max-width: 585px) {
+@media (max-width: break-points.$mobile) {
   .mobile-menu-container {
     display: block;
 
@@ -38,6 +39,7 @@
         align-items: center;
         justify-content: space-around;
         height: 100%;
+
         li {
           align-self: center;
           cursor: pointer;

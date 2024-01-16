@@ -6,40 +6,89 @@
   </section>
   <section class="login-form-container">
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
-      <h1>Welcome Back!</h1>
-      <h6>Please Enter your credentials</h6>
-      <div class="form-control">
-        <label for="email">Email</label>
-        <input
-          type="text"
-          [placeholder]="'login.form.email' | translate"
-          id="email"
-          formControlName="email"
-        />
-        @if (email?.invalid && (email?.dirty || email?.touched))
+      <input
+        style="position: fixed; top: -100px; left: -100px; width: 5px"
+        type="text"
+        name="fakeusernameremembered"
+      />
+      <!--For Chrome auto complete-->
+      <input
+        style="position: fixed; top: -100px; left: -100px; width: 5px"
+        type="password"
+        name="fakepasswordremembered"
+      /><!--For Chrome auto complete-->
+      <input
+        style="position: fixed; top: -100px; left: -100px; width: 5px"
+        type="text"
+        name="usernameremembered"
+      />
+      <!--For Chrome auto complete-->
+      <input
+        style="position: fixed; top: -100px; left: -100px; width: 5px"
+        type="password"
+        name="passwordremembered"
+      /><!--For Chrome auto complete-->
+      <div class="form-intro">
+        <h1><a class="link" routerLink="/"> Mut1aq </a></h1>
+
+        <h6>Welcome Back</h6>
+        <h6>Please Enter your credentials</h6>
+      </div>
+
+      <div class="text-form-control">
+        <label [ngClass]="{ 'stay-on-top': !email?.value?.trim() }" for="email"
+          >Email</label
+        >
+
+        <input type="text" appPreventSpace formControlName="email" id="email" />
+        <span class="bar"></span>
+
+        <!-- @if (email?.invalid && (email?.dirty || email?.touched))
         {<app-form-control-errors
           [controlToValidate]="email"
           translationName="login.form.email"
         ></app-form-control-errors
-        >}
+        >} -->
       </div>
-      <div class="form-control">
-        <label for="password">Password</label>
+      <div class="text-form-control">
+        <label
+          [ngClass]="{ 'stay-on-top': !password?.value?.trim() }"
+          for="password"
+          >Password</label
+        >
         <input
-          type="password"
-          placeholder="Password"
+          [type]="isPasswordHidden ? 'password' : 'text'"
           id="password"
+          appPreventSpace
           formControlName="password"
+          autocomplete="new-password"
         />
-        @if (password?.invalid && (password?.dirty || password?.touched))
+
+        <span class="bar"></span>
+        <figure (click)="showHidePassword()" class="show-hide-password">
+          <img
+            src="{{
+              'assets/svgs/' +
+                (isPasswordHidden ? 'hide' : 'show') +
+                '-password-icon.svg'
+            }}"
+            alt="show hide password"
+          />
+        </figure>
+        <!-- @if (password?.invalid && (password?.dirty || password?.touched))
         {<app-form-control-errors
           [controlToValidate]="password"
           translationName="login.form.password"
         ></app-form-control-errors
-        >}
+        >} -->
       </div>
 
-      <div class="form-control">
+      <div class="check-box-form-control">
+        <input type="checkbox" name="" id="rememberMe" />
+        <label for="rememberMe">Remember Me for 30 days</label>
+      </div>
+
+      <div class="text-form-control">
         <button type="submit" id="login-button">Login</button>
       </div>
     </form>

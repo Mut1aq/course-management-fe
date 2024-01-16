@@ -1,22 +1,57 @@
 @use "../../../../assets/styles/_colors" as colors;
 @use "../../../../assets/styles/_sizes" as sizes;
+@use "../../../../assets/styles/_links" as links;
+@use "../../../../assets/styles/_helpers" as helpers;
+@use "../../../../assets/styles/_form-controls" as form-controls;
+@use "../../../../assets/styles/_break-points" as break-points;
 
 .login-page-container {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+  background-color: colors.$grey;
+  padding: 0.5em;
+  border-radius: calc(1em - 10px);
+  width: 90%;
 
   .login-page-svg-container {
     margin-left: 1em;
     figure {
       img {
-        width: 70%;
+        width: 60%;
       }
     }
   }
 
+  @media (max-width: break-points.$mobile) {
+    .login-page-svg-container {
+      display: none;
+    }
+  }
+
   .login-form-container {
-    margin-right: 1em;
+    padding: 1em;
+    margin-right: 0.5em;
+    background-color: colors.$white;
+    border-radius: 10px;
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 1em;
+
+      .form-intro {
+        text-align: center;
+        margin-bottom: 1em;
+        h1 {
+          margin-bottom: 1em;
+          a {
+            font-size: 1.5em !important;
+          }
+        }
+      }
+    }
   }
 }

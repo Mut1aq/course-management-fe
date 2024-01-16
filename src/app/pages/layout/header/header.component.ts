@@ -7,6 +7,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { BREAK_POINTS } from 'src/app/shared/constants/break-points.constant';
 import { HeaderAuthButtonsComponent } from './header-auth-buttons/header-auth-buttons.component';
 import { HeaderLogoComponent } from './header-logo/header-logo.component';
 import { HeaderMobileMenuComponent } from './header-mobile-menu/header-mobile-menu.component';
@@ -32,7 +33,8 @@ export class HeaderComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformID))
-      this.isMobileScreen = this.document.defaultView!.innerWidth < 585;
+      this.isMobileScreen =
+        this.document.defaultView!.innerWidth < BREAK_POINTS.mobile;
   }
 
   isMobileScreen = false;
@@ -41,7 +43,7 @@ export class HeaderComponent implements OnInit {
   onResize(event: Event & { target: { innerWidth: number } }) {
     const width = event.target?.innerWidth;
 
-    if (width < 585) this.isMobileScreen = true;
+    if (width < BREAK_POINTS.mobile) this.isMobileScreen = true;
     else this.isMobileScreen = false;
   }
 }

@@ -2,6 +2,7 @@
 @use "../../../../../assets/styles/_buttons" as buttons;
 @use "../../../../../assets/styles/_links" as links;
 @use "../../../../../assets/styles/_helpers" as helpers;
+@use "../../../../../assets/styles/_break-points" as break-points;
 
 .navigation-container {
   nav {
@@ -14,7 +15,7 @@
     }
   }
 }
-@media (max-width: 585px) {
+@media (max-width: break-points.$mobile) {
   .navigation-container {
     display: none;
   }
